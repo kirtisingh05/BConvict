@@ -1,0 +1,98 @@
+<form [formGroup]="dyForm">
+    <fieldset *ngFor="let each of Record; let j=index">  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title text-center">Evidence Details*</h5>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div action="" class="form-horizontal row" >
+                <div *ngIf="!showSave" class="form-group" [formGroupName]="j">
+                    <label for="Evidence_id" class="control-label col-sm-3">Evidence ID :</label>
+                    <div class="col-sm-7">
+                        <input formControlName="Evidence_id" type="text" placeholder=" Enter  Evidence id"
+                            id="Evidence_id" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Type" class="control-label col-sm-3">Evidence Type :</label>
+                    <div class="col-sm-7">
+                        <input formControlName="Evidence_Type" type="text" placeholder="Eenter Type" id="Type"
+                            class="form-control" [readonly]="!ifAdd">
+                    </div>
+                </div>
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Custody" class="control-label col-sm-3">Custody :</label>
+                    <div class="col-sm-7">
+                        <input formControlName="Custody" type="text" placeholder="Eenter Custody" id="Custody"
+                            class="form-control" [readonly]="!ifAdd">
+                    </div>
+
+                </div>
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Description" class="control-label col-sm-3">Evidence Description
+                        :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Evidence_Description" placeholder="Eenter Description"
+                            id="Description" rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Date_Collected" class="control-label col-sm-3">Date Collected :</label>
+                    <div class="col-sm-6">
+                        <input formControlName="Date_Collected" type="date" placeholder="Eenter Date Collected"
+                            id="Updated_At" class="form-control" [readonly]="!ifAdd">
+                    </div>
+                </div>
+
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Condition" class="control-label col-sm-3">Condition :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Condition" placeholder="Eenter Condition" id="Condition" rows="3"
+                            class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Results" class="control-label col-sm-3">Analysis Results :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Analysis_Results" placeholder="Eenter Results" id="Results" rows="3"
+                            class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group"  [formGroupName]="j">
+                    <label for="Disposition" class="control-label col-sm-3">Disposition :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Disposition" placeholder="Enter Disposition" id="Disposition"
+                            rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div *ngIf="ifAdd && showSave" class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <input (click)="onSubmit()" type="submit" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#exampleModal"
+                            value="Submit">
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </fieldset>
+</form>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body">
+            {{evidencError}}
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

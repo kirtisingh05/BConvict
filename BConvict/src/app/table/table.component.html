@@ -1,0 +1,8 @@
+<table>
+    <tr>
+        <th *ngFor="let each of constant">{{each.display}}</th>
+    </tr>
+    <tr (click)="onClick(each[constant[0].value])"  class="clickable"  *ngFor="let each of Record">
+        <td *ngFor="let x of constant"><a >{{each[x.value]}}</a></td>
+    </tr>
+</table>

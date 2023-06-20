@@ -1,0 +1,11 @@
+.modal-header .close {
+    margin-top: -20px;
+}
+.modal-header {
+    text-align: center;
+}
+  .modal-body {
+    color: #18901d;
+    /* position: relative;
+    padding: 15px; */
+}

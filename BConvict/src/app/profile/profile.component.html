@@ -1,0 +1,143 @@
+<div class="container">
+    <div class="container-xl px-4 mt-4">
+        
+        <hr class="mt-0 mb-4">
+        <div class="row">
+            <div class="col-xl-4">
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Person Details</div>
+                    <div class="card-body boilerform">
+                        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                            <!-- Form Group (username)--> 
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
+                                <input formControlName="username" class="form-control" id="inputUsername" type="text" placeholder="Enter your username">
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">First name</label>
+                                    <input formControlName="firstname" class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name">
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Last name</label>
+                                    <input formControlName="lastName" class="form-control" id="inputLastName" type="text" placeholder="Enter your last name">
+                                </div>
+                            </div>
+                            <!-- Form Row        -->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (Addhar name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputOrgName">Addhar No</label>
+                                    <input  formControlName="addhar" class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" >
+                                </div> 
+                                <!-- Form Group (Address)-->
+                                <div class="col-md-6"> 
+                                    <label class="small mb-1" for="inputLocation">Address</label>
+                                    <input formControlName="address" class="form-control" id="inputLocation" type="text" placeholder="Enter your location" >
+                                </div>
+                            </div>
+                            <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                <input formControlName="email" class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address">
+                            </div>
+                            <!-- Form Row-->
+                            <!-- <div class="row gx-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Phone number</label>  
+                                    <input  formControlName="phoneNo" class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Birth date</label>
+                                    <input formControlName="Date_of_Birth" class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday">
+                                </div>
+                            </div> -->
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (PAN no)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">PAN no</label>
+                                    <input formControlName="PAN_NO" class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" >
+                                </div>
+                                <!-- Form Group (Gender)-->
+                                <label for="gender" class="control-label col-sm-3">Gender :</label>
+                                <div class="col-md-6">
+                                    <select name="gender" id="gender" class="form-control" formControlName="gender" >
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="MALE">MALE</option>
+                                        <option value="FEMALE">FEMALE</option>
+                                        <option value="OTHER">OTHER</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="row gx-3 mb-3">
+                                    <label class="small mb-1" for="inputUsername">name</label>
+                                    <input formControlName="name" class="form-control" id="inputUsername" type="text" placeholder="Enter your username">
+                                </div> -->
+                                <!-- <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Gender</label>
+                                    <input formControlName="gender" class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" >
+                                </div> -->
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Birth date </label>
+                                    <input formControlName="Date_of_Birth" class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Enter your birthday">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <label class="control-label col-md-6" for="mobile">Mobile:</label>
+                                        <span class="input-group-addon">+91</span>
+                                        <input type="text" formControlName="phoneNo" class="form-control" id="mobile" maxlength="10">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (phone number)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Father's Name</label>  
+                                    <input  formControlName="Father_Name" class="form-control" id="inputPhone" type="tel" placeholder="Enter your Father's Name">
+                                </div>
+                                <!-- Form Group (birthday)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Mother's Name</label>
+                                    <input formControlName="Mother_Name" class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your Mother's Name">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body">
+            {{profileError}}
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

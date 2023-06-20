@@ -1,0 +1,19 @@
+<div class="limit-height" style="size:40px;">
+    <h4 class="my-class"> My FIR </h4>
+    <form [formGroup]="mydashForm" (ngSubmit)="applyFilter()">
+        <i class="fa fa-filter" style="font-size:40px;color:#17B794"></i>
+        <mat-form-field appearance="fill" class="try">
+            <mat-label>Select an field</mat-label>
+            <mat-select formControlName="field_name">
+                <mat-option value="" (click)="whenNone()">None</mat-option>
+                <mat-option *ngFor="let each of Labels" value="{{each}}">{{options[each]}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <label [class.hide]="mydashForm.value.field_name == ''" class="btn btn-custom">IS</label>
+        <mat-form-field [class.hide]="mydashForm.value.field_name == ''" appearance="fill" >
+            <mat-label>Enter {{options[mydashForm.value.field_name]}}</mat-label>
+            <input matInput #first formControlName="value">
+        </mat-form-field>
+        <button [class.hide]="mydashForm.value.field_name == ''" type="submit" class="btn btn-primary">submit</button>
+    </form>
+</div>

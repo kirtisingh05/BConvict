@@ -1,0 +1,114 @@
+<fieldset>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 class="panel-title text-center">FIR Details*</h5>
+        </div>
+    </div> 
+    <div class="panel-body">
+        <form action="" class="form-horizontal row" [formGroup]="firForm">
+            <div *ngIf="showSave" class="form-group">
+                <label for="FIR_ID" class="control-label col-sm-3">User ID :</label>
+                <div class="col-sm-7">
+                    <input formControlName="User_ID" type="text" placeholder=" Enter User ID" id="" class="form-control">
+                </div>
+            </div>
+            
+            <div *ngIf="!showSave" class="form-group">
+                <label for="FIR_ID" class="control-label col-sm-3">FIR ID :</label>
+                <div class="col-sm-7">
+                    <input formControlName="fir_id" type="text" placeholder=" Enter FIR ID" id="FIR ID" class="form-control">
+                </div>
+            </div>
+ 
+            <div class="form-group">
+                <label for="Status" class="control-label col-sm-3">Status :</label>
+                <div class="col-sm-7">
+                    <input formControlName="Status" type="text" placeholder=" Enter Status" id="Status" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Offence" class="control-label col-sm-3">Offence :</label>
+                <div class="col-sm-7">
+                    <input formControlName="Offence" type="text" placeholder=" enter Offence" id="Offence" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Offence_Date" class="control-label col-sm-3">Offence date :</label>
+                <div class="col-sm-6">
+                    <input formControlName="Offence_Date" type="date" placeholder=" enter Offence Date" id="Offence_Date"
+                        class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Police_Station" class="control-label col-sm-3">Police Station :</label>
+                <div class="col-sm-6">
+                    <input formControlName="Police_Station" type="text" placeholder=" enter Police Station" id="Police_Station"
+                        class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Description" class="control-label col-sm-3">Description :</label>
+                <div class="col-sm-7">
+                    <textarea formControlName="Description" placeholder=" enter Description" id="Description" rows="3"
+                        class="form-control"></textarea>
+                </div>
+            </div>
+            <div *ngIf="!showSave" class="form-group">
+                <label for="Created_At" class="control-label col-sm-3">Created At :</label>
+                <div class="col-sm-6">
+                    <input formControlName="Created_At" type="date" placeholder=" enter Created At" id="Created_At"
+                        class="form-control">
+                </div>
+            </div>
+
+            <div *ngIf="!showSave" class="form-group">
+                <label for="Updated_At" class="control-label col-sm-3">Updated At :</label>
+                <div class="col-sm-6">
+                    <input formControlName="Updated_At" type="date" placeholder=" enter Updated At" id="Updated_At"
+                        class="form-control"> 
+                </div>
+            </div>
+            <div *ngIf="ifAdd && showSave" class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <input (click)="onSubmit()" type="submit" class="btn btn-success btn-lg btn-block"  data-toggle="modal" data-target="#exampleModal" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="ifAdd && !showSave" class="row" style="text-align: center;"> 
+        
+            <button class="btn btn-primary btn-lg  add-fir-btn">
+                <i class="fa fa-plus"></i> <a href="{{'addCase;add_fir_id='+fir_id}}" >Add Case</a>
+            </button>
+
+            <button class="btn btn-primary btn-lg  add-fir-btn">
+                <i class="fa fa-plus"></i> <a href="{{'addEvidence;add_fir_id='+fir_id}}">Add Evidence</a>
+            </button>
+        
+    </div>
+    
+</fieldset>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body">
+            {{FIRError}}
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="container-fluid"> 
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 well">
+            <div class="panel panel-info"> 
+
+                <app-add-fir [fir_id]="fir_id" [showSave]="false" ></app-add-fir>
+
+                <app-add-case [fir_id]="fir_id" [showSave]="false"></app-add-case>
+
+                <app-add-evidence [fir_id]="fir_id" [showSave]="false" ></app-add-evidence>
+
+                <div *ngIf="ifAdd" class="panel-footer">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="checkbox">
+                                <label class="text-warning">
+                                    <input type="checkbox" id="all_correct" name="all_correct" value="1"> I
+                                    hereby
+                                    declare that all the above information are correct 
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-lg-offset-5">
+                            <input (click)="onSubmit()" type="submit" class="btn btn-success btn-lg btn-block" value="save">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

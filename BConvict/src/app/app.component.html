@@ -1,0 +1,16 @@
+<div class="gtco-loader"></div>
+	
+	<div id="">
+
+		<app-loginheader *ngIf = "loggedIn == true" ></app-loginheader>
+		<app-header *ngIf= " !loggedIn  == true "></app-header>
+		
+		<router-outlet></router-outlet>
+		<app-loginfooter *ngIf = "loggedIn == true"></app-loginfooter>
+		<app-footer *ngIf= " !loggedIn  == true "></app-footer>
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>

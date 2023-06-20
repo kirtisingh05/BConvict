@@ -1,0 +1,62 @@
+.container {
+    margin-top: 50px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #f2f2f2;
+    border-bottom: none;
+    font-weight: bold;
+    text-align: center;
+}
+.card-body {
+    padding: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.form-control {
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+.btn-primary {
+    /*background-color: #6c63ff;*/
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #4b44ff;
+}
+.text-danger {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    color: #ff0000;
+    font-weight: bold;
+  }
+.login{
+    margin: 0px 0px 30px;
+}
+
+.modal-header .close {
+    margin-top: -20px;
+}
+.modal-header {
+    text-align: center;
+}

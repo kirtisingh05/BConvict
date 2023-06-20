@@ -1,0 +1,13 @@
+<div class="example-form-fields">
+    <div class="container">
+        <app-filter [options]="options.options" (returnVal)="getFilterValue($event)"></app-filter>
+        <div> 
+            <app-table [Record]="firRecord" [constant]="firConstant.firData"></app-table>
+        </div>
+
+        <button *ngIf="ifAdd" class="btn btn-primary btn-lg  add-fir-btn">
+            <i class="fa fa-plus"></i> <a href="addFir">Add FIR</a>
+        </button>
+
+    </div>
+</div>

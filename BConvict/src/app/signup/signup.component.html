@@ -1,0 +1,72 @@
+<div class="container">
+   <div class="signup">
+      <div class="col-md-6"></div>
+      <div class="col-md-6">
+         <div class="card">
+            <div class="card-header">Sign Up</div>
+            <div class="card-body">
+               <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                  <div class="form-group">
+                     <label for="User name">User name</label>
+                     <input formControlName="username" type="User name" class="form-control" id="User name"
+                        placeholder="Enter User name">
+                  </div>
+                  <div class="form-group">
+                     <label for="Email">User Email</label>
+                     <input formControlName="Email" type="email" name="email" id="email" class="form-control"
+                        placeholder="Enter Email">
+                  </div>
+                  <div class="form-group">
+                     <label for="Address">User Address </label>
+                     <textarea formControlName="Address" name="Address" id="Address" rows="3" class="form-control"
+                        placeholder="Enter Address"></textarea>
+                  </div>
+                  <div class="form-group">
+                     <label for="Phone_No">User Phone No </label>
+                     <input formControlName="Phone_No" type="Phone_No" class="form-control" id="Phone_No"
+                        placeholder="Enter Phone No">
+                  </div>
+                  <div class="form-group">
+                     <label for="Addhar_No">User Addhar No </label>
+                     <input formControlName="Addhar_No" type="Addhar_No" class="form-control" id="Addhar_No"
+                        placeholder="Enter Addhar No">
+                  </div>
+                  <div class="form-group">
+                     <label for="Gender">User Gender </label>
+                     <input formControlName="Gender" type="Gender" class="form-control" id="Gender"
+                        placeholder="Enter Gender">
+                  </div>
+                  <div class="form-group">
+                     <label for="password">Password </label>
+                     <input formControlName="password" type="password" class="form-control" id="password"
+                        placeholder="Password ">
+                        <div *ngIf="passwordError" class="alert alert-danger" role="alert">
+                           <a href="#" class="alert-link">{{passwordError}}</a>.
+                           </div>
+                 </div>
+                  <form [formGroup]="passwordForm">
+                     <div class="form-group">
+                        <label for="password">confirm Password </label>
+                        <input formControlName="confirmPassword" type="password" class="form-control"
+                           id="confirmPassword" placeholder="confirm Password ">
+                           <div *ngIf="conpasswordError" class="alert alert-danger" role="alert">
+                              <a href="#" class="alert-link">{{conpasswordError}}</a>.
+                              </div>
+                     </div>
+                     <div class="form-group">
+                        <a href="login">Already register? click to login!</a>
+                     </div>
+                     <div *ngIf="signupError" class="alert alert-danger" role="alert">
+                        <a href="#" class="alert-link">{{signupError}}</a>.
+                        </div>
+                     <div *ngIf="fieldError" class="alert alert-danger" role="alert">
+                        <a href="#" class="alert-link">{{fieldError}}</a>.
+                        </div>
+                  </form>
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

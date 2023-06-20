@@ -1,0 +1,32 @@
+.add-fir-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:  #17b794;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+a {
+    color: #ffff;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+.add-fir-btn:hover {
+    background-color: hsl(125, 73%, 45%);
+}
+.modal-header .close {
+    margin-top: -20px;
+}
+.modal-header {
+    text-align: center;
+}
+  .modal-body {
+    color: #18901d;
+    /* position: relative;
+    padding: 15px; */
+}

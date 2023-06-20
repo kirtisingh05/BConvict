@@ -1,0 +1,102 @@
+<form  [formGroup]="dyForm">
+    <fieldset *ngFor="let each of Record; let j=index">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title text-center">Case Details*</h5>
+            </div>
+        </div> 
+        <div class="panel-body"> 
+            <div class="form-horizontal row">
+
+                <div *ngIf="!showSave" class="form-group" [formGroupName]="j">
+                    <label for="Case_id" class="control-label col-sm-3">Case ID :</label>
+                    <div class="col-sm-7">
+                        <input formControlName="Case_id" type="text" placeholder=" Enter Case id" id="Case_id"
+                            class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Title" class="control-label col-sm-3">Case Title :</label>
+                    <div class="col-sm-7">
+                        <input formControlName="Case_Title" type="text" placeholder=" Enter Title" id="Title"
+                            class="form-control" [readonly]="!ifAdd">
+                    </div>
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Status" class="control-label col-sm-3">Status case :</label>
+                    <div class="col-sm-7">
+                        <input formControlName="Case_Status" type="text" placeholder=" Enter Status" id="Status"
+                            class="form-control" [readonly]="!ifAdd">
+                    </div>
+
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Description" class="control-label col-sm-3">Case Description
+                        :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Case_Description" placeholder=" Enter Description" id="Description"
+                            rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Information" class="control-label col-sm-3">Bail Information
+                        :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Bail_Information" placeholder=" Enter Bail Information"
+                            id="Information" rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Information" class="control-label col-sm-3">Charge Information
+                        :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Charge_Information" placeholder=" Enter Charge Information"
+                            id="Information" rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Information" class="control-label col-sm-3">Arrest Information
+                        :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Arrest_Information" placeholder=" Enter Arrest Information"
+                            id="Information" rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div class="form-group" [formGroupName]="j">
+                    <label for="Information" class="control-label col-sm-3">Court Information
+                        :</label>
+                    <div class="col-sm-7">
+                        <textarea formControlName="Court_Information" placeholder=" Enter Court Information"
+                            id="Information" rows="3" class="form-control" [readonly]="!ifAdd"></textarea>
+                    </div>
+                </div>
+                <div *ngIf="ifAdd && showSave" class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <input (click)="onSubmit()" type="submit" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#exampleModal"
+                            value="Submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        <div class="modal-body">
+            {{caseError}}
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
